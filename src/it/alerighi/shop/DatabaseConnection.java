@@ -1,15 +1,15 @@
-package it.alerighi;
+package it.alerighi.shop;
+
+import static it.alerighi.shop.Util.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static it.alerighi.Util.*;
-
 /**
  * Classe che gestisce l'accesso al database.
  * Paradigma usato: singleton
- *
+ * 
  * @author Alessandro Righi
  */
 public final class DatabaseConnection {
@@ -18,6 +18,11 @@ public final class DatabaseConnection {
     private static DatabaseConnection instance = null;
 
     private Connection connection = null;
+    
+    private final String DB_HOST = "localhost";
+    private final String DB_USER = "negozio";
+    private final String DB_PASS = "negozio";
+    private final String DB_NAME = "NegozioCD";
 
     /**
      * Costruttore della classe
@@ -49,7 +54,7 @@ public final class DatabaseConnection {
     private void connect() {
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/NegozioCD?user=negozio&password=negozio");
+            connection = DriverManager.getConnection("jdbc:mysql://" + DB_HOST + "/" + DB_NAME + "?user=" + DB_USER + "&password=" + DB_PASS);
         } catch (SQLException e) {
             die("Errore connessione al database");
         }

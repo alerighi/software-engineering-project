@@ -1,4 +1,4 @@
-package it.alerighi;
+package it.alerighi.shop;
 
 /**
  * Classe di utilià

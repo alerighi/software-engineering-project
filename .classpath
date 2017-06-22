@@ -2,13 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="lib" path="lib/miglayout-core-javadoc.jar"/>
-	<classpathentry kind="lib" path="lib/miglayout-core-sources.jar"/>
-	<classpathentry kind="lib" path="lib/miglayout-core.jar"/>
-	<classpathentry kind="lib" path="lib/miglayout-swing-javadoc.jar"/>
-	<classpathentry kind="lib" path="lib/miglayout-swing-sources.jar"/>
-	<classpathentry kind="lib" path="lib/miglayout-swing.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.42-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aless/Desktop/software-engineering-project/lib/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="out/production/software-engineering-project"/>
 </classpath>

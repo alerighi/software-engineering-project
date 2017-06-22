@@ -1,10 +1,9 @@
 /**
  * 
  */
-package it.alerighi;
+package it.alerighi.shop;
 
 import java.util.*;
-
 
 /**
  * Classe che rappresenta il carrello.
@@ -73,5 +72,22 @@ public class Cart {
 	 */
 	public List<Album> getItems() {
 		return items;
+	}
+	
+	public int numberOfItems() {
+		return items.size();
+	}
+	
+	/**
+	 * Ritorna una rappresentazione sottoforma di stringa del carrello
+	 * 
+	 * @return rappresentazione sottoforma di stringa del carrello
+	 */
+	@Override
+	public String toString() {
+		String result = "Elementi nel carrello:\n";
+		for (Album album: items)
+			result += album.getTitle() + "\n";
+		return result;
 	}
 }

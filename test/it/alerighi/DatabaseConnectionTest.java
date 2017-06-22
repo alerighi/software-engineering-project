@@ -2,12 +2,14 @@ package it.alerighi;
 
 import org.junit.jupiter.api.Test;
 
+import it.alerighi.shop.Album;
+import it.alerighi.shop.DatabaseConnection;
 
 import javax.xml.crypto.Data;
 
 import java.util.List;
 
-import static it.alerighi.Util.info;
+import static it.alerighi.shop.Util.info;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**

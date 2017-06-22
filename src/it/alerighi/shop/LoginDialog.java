@@ -1,4 +1,4 @@
-package it.alerighi;
+package it.alerighi.shop;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;

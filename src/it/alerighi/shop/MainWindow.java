@@ -1,7 +1,10 @@
-package it.alerighi;
+package it.alerighi.shop;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import static it.alerighi.shop.Util.die;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -9,8 +12,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import static it.alerighi.Util.die;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -25,6 +26,7 @@ public class MainWindow extends JFrame {
 
     private String user = null;
     private JTable table;
+    private Cart cart = Cart.getInstance();
 
     /**
      * Costruttore della finestra
@@ -85,7 +87,8 @@ public class MainWindow extends JFrame {
         toolBar.add(new JTextField());
         toolBar.add(new JButton("Cerca"));
 
-        toolBar.add(new JButton("Visualizza carrello"));
+        toolBar.add(new JButton("Carrello ("
+        		+ "" + cart.numberOfItems() + ")"));
         JButton buttonLogin = new JButton(user == null ? "Login" : "Logout");
         buttonLogin.addActionListener(e -> {
         	if (user != null)

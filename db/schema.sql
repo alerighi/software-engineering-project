@@ -50,11 +50,11 @@ CREATE TABLE cd (
     PRIMARY KEY (id)
 );
 
-INSERT INTO CD (titolo, copertina, prezzo, titolare, genere) VALUES 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
     ('The Wall', 'wall.jpg', 20, 'Pink Floyd', 'progressive rock');
-INSERT INTO CD (titolo, copertina, prezzo, titolare, genere) VALUES 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
     ('Wish you were here', 'wish.jpg', 14, 'Pink Floyd', 'progressive rock');
-INSERT INTO CD (titolo, copertina, prezzo, titolare, genere) VALUES 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
     ('The Dark Side Of The Moon', 'dark.jpg', 16, 'Pink Floyd', 'progressive rock');
 
 
