@@ -54,17 +54,17 @@ public class AlbumDetailsWindow extends JDialog {
         
         
         
-        String[][] musicians = new String[album.getMusicians().size()][2];
+        String[][] musicians = new String[album.getMusicians().length][2];
         
         for (int i = 0; i < musicians.length; i++) {
-        	musicians[i][0] = album.getMusicians().get(i);
-        	musicians[i][1] = album.getInstruments().get(i);
+        	musicians[i][0] = album.getMusicians()[i].toString();
+        	musicians[i][1] = album.getInstruments()[i];
         }
        
         JTable table = new JTable(new DefaultTableModel(
-        		musicians,
-        		new String[] {"Musicista", "Strumento suonato"}
-        		));
+        	musicians,
+        	new String[] {"Musicista", "Strumento suonato"}
+        ));
         table.setEnabled(false);
         table.getTableHeader().setReorderingAllowed(false);
         table.setFillsViewportHeight(true);
