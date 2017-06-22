@@ -53,7 +53,6 @@ public class AlbumDetailsWindow extends JDialog {
         getContentPane().add(lblNewLabel);
         
         
-        
         String[][] musicians = new String[album.getMusicians().length][2];
         
         for (int i = 0; i < musicians.length; i++) {
@@ -74,18 +73,15 @@ public class AlbumDetailsWindow extends JDialog {
         getContentPane().add(scrollPane_1);
 
         
-        JList<Object> list = new JList<>();
-        list.setListData(album.getSongs().toArray());
+        JList<String> list = new JList<>();
+        list.setListData(album.getSongs());
 
         JScrollPane scrollPane = new JScrollPane(list);
         scrollPane.setBounds(25, 378, 350, 178);
         getContentPane().add(scrollPane);
         
         JButton btnAcquista = new JButton("Aggiungi al carrello");
-        btnAcquista.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        	}
-        });
+        btnAcquista.addActionListener(e -> Cart.getInstance().add(album));
         btnAcquista.setBounds(25, 167, 350, 29);
         getContentPane().add(btnAcquista);
 
