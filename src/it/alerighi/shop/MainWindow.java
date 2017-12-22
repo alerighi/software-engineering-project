@@ -1,43 +1,73 @@
 package it.alerighi.shop;
 
+import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
-import static it.alerighi.shop.Util.die;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 /**
  * Finestra principale dell'applicazione
  *
  * @author Alessandro Righi
  */
-public class MainWindow extends JFrame {
+public class MainWindow extends JFrame implements Observer {
 
+    /**
+     * Titolo della finestra
+     */
     public static final String TITLE = "Negozio CD";
 
-    private String user = null;
+    /**
+     * Utente se loggato, null altrimenti
+     */
+    private User user = null;
+
+    /**
+     * Tabella dei cd
+     */
     private JTable table;
+
+    /**
+     * Oggetto carrello
+     */
     private Cart cart = Cart.getInstance();
+
+    /**
+     * Oggetto catalogo
+     */
+    private Catalog catalog = new CatalogDatabase();
+
+    /**
+     * lista degli album
+     */
+    private List<Album> albums;
+
+    /**
+     * Bottone carrello
+     */
+    private JButton cartButton = new JButton();
+
 
     /**
      * Costruttore della finestra
      */
     public MainWindow() {
         initializeUI();
+        cart.registerObserver(this);
+        update();
     }
 
-    private void getAlbums() {
+    /**
+     * Setta gli album secondo la query specificata
+     *
+     * @param mode modalità di query
+     * @param parameter parametro query
+     */
+    private void getAlbums(String mode, String parameter) {
 
-        Connection conn = DatabaseConnection.getInstance().getConnection();
         DefaultTableModel model = new DefaultTableModel(
                 null,
                 new String[] {"Titolo", "Autore", "Genere"})
@@ -48,21 +78,22 @@ public class MainWindow extends JFrame {
             }
         };
 
-        try {
-            Statement statement = conn.createStatement();
-            ResultSet result = statement.executeQuery("SELECT titolo, titolare, genere FROM cd");
-            while (result.next()) {
-                Object[] data = new Object[] {
-                        result.getString("titolo"),
-                        result.getString("titolare"),
-                        result.getString("genere")
-                };
-
-                model.addRow(data);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            die("Errore query");
+        if (mode == null)
+        	albums = catalog.getAlbums();
+        else if (mode.equals("titolo"))
+        	albums = catalog.getAlbumsByTitle(parameter);
+        else if (mode.equals("genere"))
+        	albums = catalog.getAlbumsByGenre(parameter);
+        else if (mode.equals("autore"))
+        	albums = catalog.getAlbumsByAuthor(parameter);
+        else if (mode.equals("musicista"))
+        	albums = catalog.getAlbumsByMusician(parameter);
+        else if (mode.equals("prezzo minore di"))
+        	albums = catalog.getAlbumsByPrice(Integer.parseInt(parameter));
+        
+        
+        for (Album album: albums) {
+        	model.addRow(new String[] {album.getTitle(), album.getAuthor(), album.getGenre()});
         }
 
         table.setModel(model);
@@ -83,18 +114,23 @@ public class MainWindow extends JFrame {
         JToolBar toolBar = new JToolBar();
         toolBar.setFloatable(false);
         toolBar.add(new JLabel("Ricerca per"));
-        toolBar.add(new JComboBox(new String[] {"titolo", "genere", "autore", "prezzo minore di"} ));
-        toolBar.add(new JTextField());
-        toolBar.add(new JButton("Cerca"));
+        JComboBox comboBox = new JComboBox(new String[] {"titolo", "genere", "autore", "musicista", "prezzo minore di"});
+        toolBar.add(comboBox);
+        JTextField tf = new JTextField();
+        toolBar.add(tf);
+        JButton button_1 = new JButton("Cerca");
+        button_1.addActionListener(e -> getAlbums((String) comboBox.getSelectedItem(), tf.getText()));
+        toolBar.add(button_1);
 
-        toolBar.add(new JButton("Carrello ("
-        		+ "" + cart.numberOfItems() + ")"));
+        cartButton.addActionListener(e -> new CartWindow());
+        toolBar.add(cartButton);
         JButton buttonLogin = new JButton(user == null ? "Login" : "Logout");
         buttonLogin.addActionListener(e -> {
         	if (user != null)
         		user = null;
         	else 
         		user = new LoginDialog().showDialog();
+        	buttonLogin.setText(user == null ? "Login" : "Logout");
         });
         toolBar.add(buttonLogin);
         
@@ -108,13 +144,12 @@ public class MainWindow extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
                     int row = table.rowAtPoint(e.getPoint());
-                    String titolo = (String) table.getModel().getValueAt(row, 0);
-                    new AlbumDetailsWindow(titolo);
+                    new AlbumDetailDialog(albums.get(row));
                 }
             }
         });
 
-        getAlbums();
+        getAlbums(null, null);
         table.setFillsViewportHeight(true);
 
         JScrollPane scrollPane = new JScrollPane(table);
@@ -122,6 +157,13 @@ public class MainWindow extends JFrame {
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
         setVisible(true);
+    }
+
+    /**
+     * Aggiorna il conto oggetti nel carrello quando chiamato dall'osservato
+     */
+    public void update() {
+    	cartButton.setText("Carrello (" + "" + cart.numberOfItems() + ")");
     }
 
 }

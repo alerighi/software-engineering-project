@@ -56,7 +56,22 @@ INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES
     ('Wish you were here', 'wish.jpg', 14, 'Pink Floyd', 'progressive rock');
 INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
     ('The Dark Side Of The Moon', 'dark.jpg', 16, 'Pink Floyd', 'progressive rock');
-
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Appetite for Destruction', 'a.jpg', 14, 'Guns N\' Roses', 'rock');
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Led Zeppelin', '_.jpg', 13, 'Led Zeppelin', 'rock'); 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Led Zeppelin II', '_.jpg', 13, 'Led Zeppelin', 'rock'); 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Led Zeppelin III', '_.jpg', 13, 'Led Zeppelin', 'rock'); 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Led Zeppelin IV', '_.jpg', 13, 'Led Zeppelin', 'rock'); 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Back In Black', '_.jpg', 15, 'AC/DC', 'rock'); 
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('Fear Of The Dark', '_.jpg', 17, 'Iron Maiden', 'metal');
+INSERT INTO cd (titolo, copertina, prezzo, titolare, genere) VALUES 
+    ('The Number of the Beast', '_.jpg', 17, 'Iron Maiden', 'metal');
 
 CREATE TABLE brani (
     cd int NOT NULL, 

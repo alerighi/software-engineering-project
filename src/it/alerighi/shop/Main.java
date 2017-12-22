@@ -28,8 +28,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        DatabaseConnection conn = DatabaseConnection.getInstance();
-
         // creo la finestra principale
         new MainWindow();
     }

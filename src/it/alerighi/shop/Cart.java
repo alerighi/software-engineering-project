@@ -13,16 +13,31 @@ import java.util.*;
  */
 public class Cart {
 
-	private List<Album> items = new ArrayList<>();
+	/**
+	 * album contenuti nel carrello
+	 */
+	private Map<Album, Integer> items = new HashMap<>();
+
+    /**
+     * Importo totale degli album contenuti nel carrello
+     */
 	private int total = 0;
-	
-	private static Cart instance = null;
+
+    /**
+     * Lista degli osservatori del carrello
+     */
+	private List<Observer> observers = new ArrayList<>();
+
+    /**
+     * Instanza del carrello
+     */
+	private static final Cart instance = new Cart();
 	
 	/**
-	 * Costruttore del carrello
+	 * Costruttore del carrello.
+     * Costruttore privato perché uso il pattern singleton.
 	 */
 	private Cart() {
-		
 	}
 	
 	/**
@@ -31,8 +46,6 @@ public class Cart {
 	 * @return istanza del carrello
 	 */
 	public static Cart getInstance() {
-		if (instance == null)
-			instance = new Cart();
 		return instance;
 	}
 	
@@ -42,8 +55,12 @@ public class Cart {
 	 * @param album album da aggiungere al carrello
 	 */
 	public void add(Album album) {
-		items.add(album);
+		if (items.containsKey(album))
+			items.put(album, items.get(album) + 1); // increase count
+		else
+			items.put(album, 1);
 		total += album.getPrice();
+		update();
 	}
 	
 	/**
@@ -52,8 +69,14 @@ public class Cart {
 	 * @param album
 	 */
 	public void remove(Album album) {
-		items.remove(album);
+		if (!items.containsKey(album))
+			return;
+		if (items.get(album) == 1)
+			items.remove(album);
+		else
+			items.put(album, items.get(album) - 1);
 		total -= album.getPrice();
+		update();
 	}
 	
 	/**
@@ -71,11 +94,49 @@ public class Cart {
 	 * @return album contenuti nel carrello
 	 */
 	public List<Album> getItems() {
+		return new ArrayList<>(items.keySet());
+	}
+
+	/**
+	 * Ritorna un hashmap con gli album e la quantità
+	 *
+	 * @return map
+	 */
+	public Map<Album, Integer> getMap() {
 		return items;
 	}
 	
 	public int numberOfItems() {
-		return items.size();
+		int result = 0;
+		for (int i: items.values())
+			result += i;
+		return result;
+	}
+	
+	/**
+	 * Registra un osservatore 
+	 * 
+	 * @param o
+	 */
+	public void registerObserver(Observer o) {
+		observers.add(o);
+	}
+	
+	/**
+	 * Rimuove un osservatore
+	 * 
+	 * @param o
+	 */
+	public void deleteObserver(Observer o) {
+		observers.remove(o);
+	}
+	
+	/**
+	 * Manda una notifica agli observer
+	 */
+	private void update() {
+		for (Observer o: observers)
+			o.update();
 	}
 	
 	/**
@@ -86,7 +147,7 @@ public class Cart {
 	@Override
 	public String toString() {
 		String result = "Elementi nel carrello:\n";
-		for (Album album: items)
+		for (Album album: items.keySet())
 			result += album.getTitle() + "\n";
 		return result;
 	}

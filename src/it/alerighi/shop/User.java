@@ -6,17 +6,47 @@ package it.alerighi.shop;
  * @author Alessandro Righi
  */
 public class User {
-		
+
+	/**
+	 * Nome utente
+	 */
 	private final String username;
+
+	/**
+	 * Password
+	 */
 	private final String password;
+
+	/**
+	 * Nome
+	 */
 	private final String firstName;
+
+	/**
+	 * Cognome
+	 */
 	private final String lastName;
-	private final String city; 
+
+	/**
+	 * Città di residenza
+	 */
+	private final String city;
+
+	/**
+	 * Codice fiscale
+	 */
 	private final String fiscalCode;
+
+	/**
+	 * Telefono fisso
+	 */
 	private final String phone;
+
+	/**
+	 * Telefono cellulare
+	 */
 	private final String mobile;
-	
-	
+
 	/**
 	 * Costruisce un nuovo utente
 	 * 
@@ -43,6 +73,8 @@ public class User {
 
 
 	/**
+	 * Ottiene l'username
+	 *
 	 * @return the username
 	 */
 	public String getUsername() {
@@ -51,6 +83,8 @@ public class User {
 
 
 	/**
+	 * Ottiene la password
+	 *
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -59,6 +93,8 @@ public class User {
 
 
 	/**
+	 * Ottiene il nome
+	 *
 	 * @return the firstName
 	 */
 	public String getFirstName() {
@@ -67,6 +103,8 @@ public class User {
 
 
 	/**
+	 * Ottiene il cognome
+	 *
 	 * @return the lastName
 	 */
 	public String getLastName() {
@@ -75,6 +113,8 @@ public class User {
 
 
 	/**
+	 * Ottiene la città
+	 *
 	 * @return the city
 	 */
 	public String getCity() {
@@ -83,6 +123,8 @@ public class User {
 
 
 	/**
+	 * Ottiene il codice fiscale
+	 *
 	 * @return the fiscalCode
 	 */
 	public String getFiscalCode() {
@@ -91,6 +133,8 @@ public class User {
 
 
 	/**
+	 * Ottiene il telefono
+	 *
 	 * @return the phone
 	 */
 	public String getPhone() {
@@ -99,6 +143,8 @@ public class User {
 
 
 	/**
+	 * Ottiene il cellulare
+	 *
 	 * @return the mobile
 	 */
 	public String getMobile() {
@@ -115,8 +161,5 @@ public class User {
 				+ lastName + ", city=" + city + ", fiscalCode=" + fiscalCode + ", phone=" + phone + ", mobile=" + mobile
 				+ "]";
 	}
-	
-	
-	
-	
+
 }

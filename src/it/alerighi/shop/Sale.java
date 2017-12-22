@@ -8,14 +8,45 @@ import java.util.Date;
  * @author Alessandro Righi
  */
 public class Sale {
-	
+
+	/**
+	 * Utente che ha effettuato l'acquisto
+	 */
 	private final User user;
+
+	/**
+	 * Oggetti acquistati
+	 */
 	private final Album[] items;
+
+	/**
+	 * ID dell'acquisto
+	 */
 	private final int id;
+
+	/**
+	 * Prezzo totale
+	 */
 	private final int total;
+
+	/**
+	 * Data acquisto
+	 */
 	private final Date date;
+
+	/**
+	 * Indirizzo ip da cui è partita la vendita
+	 */
 	private final String ip;
+
+	/**
+	 * Metodo di pagamento
+	 */
 	private final String paymentMethod;
+
+	/**
+	 * Metodo di spedizione
+	 */
 	private final String shipementMethod;
 	
 	/**
@@ -28,7 +59,7 @@ public class Sale {
 	 * @param date data in cui è stata effettuata la vendita
 	 * @param ip indirizzo ip da cui è stata effettuata la vendita
 	 * @param paymentMethod metodo di pagamento scelto
-	 * @param shipementmethod metodo di speidizione scelto
+	 * @param shipementMethod metodo di speidizione scelto
 	 */
 	public Sale(User user, Album[] items, int id, int total, Date date, String ip, String paymentMethod,
 			String shipementMethod) {

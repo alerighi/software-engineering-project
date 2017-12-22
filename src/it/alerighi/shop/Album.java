@@ -9,19 +9,72 @@ import java.util.List;
  * @author Alessandro Righi
  */
 public class Album {
-	
+
+    /**
+     * Il titolo dell'album
+     */
     private final String title;
+
+    /**
+     * L'autore dell'album
+     */
     private final String author;
+
+    /**
+     * Il path all'immagine di copertina
+     */
     private final String cover;
+
+    /**
+     * Il genere dell'album
+     */
     private final String genre;
+
+    /**
+     * Array degli strumenti partecipanti
+     */
     private final String[] instruments;
+
+    /**
+     * Array delle canzioni dell'album
+     */
     private final String[] songs;
+
+    /**
+     * Array dei musicisti partecipanti
+     */
     private final Musician[] musicians;
+
+    /**
+     * Data dalla quale l'album è in vendita
+     */
     private final Date dateSinceOnSale;
+
+    /**
+     * Identificativo univoco dell'album
+     */
     private final int id;
+
+    /**
+     * Prezzo dell'album
+     */
     private final int price;
 
 
+    /**
+     * Costruisce un nuovo oggetto album
+     *
+     * @param id id dell'album
+     * @param title titolo dell'album
+     * @param author autore
+     * @param cover path all'immagine di copertina
+     * @param price prezzo
+     * @param dateSinceOnSale data dalla quale è in vendita
+     * @param genre genere musicale
+     * @param musicians musicisti partecipanti
+     * @param instruments strumenti partecipanti
+     * @param songs canzoni contenute
+     */
     public Album(int id, String title, String author, String cover, int price, Date dateSinceOnSale, String genre,
                  Musician[] musicians, String[] instruments, String[] songs) {
         this.author = author;
@@ -134,21 +187,6 @@ public class Album {
      */
     @Override
     public String toString() {
-        String result  = "";
-        result += "id = " + id + "\n";
-        result += "Titolo = " + title + "\n";
-        result += "Autore = " + author + "\n";
-        result += "Prezzo = " + price + "\n";
-        result += "Genere = " + genre + "\n";
-        result += "Data messa in vendita = " + dateSinceOnSale + "\n";
-
-        for (int i = 0; i < musicians.length; i++)
-            result += "Musicista " + musicians[i].getName() + " strumento " + instruments[i] + "\n";
-
-        result += "Brani:\n";
-        for (String song: songs)
-            result += song + "\n";
-
-        return result;
+        return title;
     }
 }

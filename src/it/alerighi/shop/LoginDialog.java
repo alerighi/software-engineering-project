@@ -1,86 +1,68 @@
 package it.alerighi.shop;
 
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.event.*;
 
-/**
- * Classe che mostra una finestra di dialogo per il login.
- * 
- * @author Alessandro Righi
- */
 public class LoginDialog extends JDialog {
-	private String username = null;
-	
-	/**
-	 * Mostra il dialogo per il login
-	 * 
-	 * @return l'username dell'utente nel caso il login abbia successo, null altrimenti
-	 */
-	public String showDialog() {
-		setVisible(true);
-		return username;
-	}
-	
-	/**
-	 * Costruttore del dialogo per il login
-	 */
-	public LoginDialog() {
-		setResizable(false);
-		setSize(300, 160);
-		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setLocationRelativeTo(getParent());
-		setTitle("Accedi al negozio");
-		getContentPane().setLayout(null);
-		
-		JLabel lblNomeUtente = new JLabel("Nome utente");
-		lblNomeUtente.setBounds(20, 25, 90, 16);
-		getContentPane().add(lblNomeUtente);
-		
-		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(20, 53, 90, 16);
-		getContentPane().add(lblPassword);
-		
-		JTextField textField;
-		JTextField textField_1;
-		
-		textField = new JTextField();
-		textField.setBounds(122, 20, 158, 26);
-		getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(122, 48, 158, 26);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		JLabel messageLabel = new JLabel("");
-		messageLabel.setBounds(20, 81, 260, 16);
-		getContentPane().add(messageLabel);
-		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(e -> {
-			String username = textField.getText();
-			String password = textField_1.getText();
-			if (DatabaseConnection.getInstance().authenticateUser(username, password)) {
-				this.username = username;
-				this.dispose();
-		  	} else {
-				messageLabel.setText("Username o password errati!");				
-		  	}
-		});
-		btnLogin.setBounds(181, 103, 99, 29);
-		getContentPane().add(btnLogin);
-		
-		JButton btnCancel = new JButton("Cancel");
-		btnCancel.addActionListener(e -> {
-			this.dispose();
-		});
-		btnCancel.setBounds(80, 103, 99, 29);
-		getContentPane().add(btnCancel);
-		
-	}
-	
-	
+    private JPanel contentPane;
+    private JButton buttonOK;
+    private JButton buttonCancel;
+    private JTextField userNameField;
+    private JPasswordField passwordField;
+    private JButton buttonCreateUser;
+
+    /**
+     * Utente loggato
+     */
+    private User user = null;
+
+    public LoginDialog() {
+        setContentPane(contentPane);
+        setTitle("Accedi al negozio");
+        setModal(true);
+        getRootPane().setDefaultButton(buttonOK);
+        setLocationRelativeTo(null);
+        pack();
+        buttonOK.addActionListener(e -> onOK());
+
+        buttonCancel.addActionListener(e -> onCancel());
+
+        buttonCreateUser.addActionListener(e -> new CreateUserDialog().setVisible(true));
+
+        // call onCancel() when cross is clicked
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                onCancel();
+            }
+        });
+
+        // call onCancel() on ESCAPE
+        contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+    private void onOK() {
+
+        if (userNameField.getText().length() <= 0)
+            JOptionPane.showMessageDialog(this, "Il nome utente non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
+        if (passwordField.getPassword().length <= 0)
+            JOptionPane.showMessageDialog(this, "La password non può essere vuota", "Errore", JOptionPane.ERROR_MESSAGE);
+        else
+            user = new UsersDatabase().authenticateUser(userNameField.getText(), new String(passwordField.getPassword()));
+
+        if (user == null)
+            JOptionPane.showMessageDialog(this, "Username o password errati", "Errore", JOptionPane.ERROR_MESSAGE);
+        else
+            dispose();
+    }
+
+    private void onCancel() {
+        // add your code here if necessary
+        dispose();
+    }
+
+    public User showDialog() {
+        setVisible(true);
+        return user;
+    }
 }

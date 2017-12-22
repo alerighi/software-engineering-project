@@ -3,6 +3,7 @@
  */
 package it.alerighi.shop;
 
+
 import static it.alerighi.shop.Util.die;
 
 import java.sql.Connection;
@@ -20,14 +21,14 @@ import java.util.List;
 public class CatalogDatabase implements Catalog {
 
 	
-	private final Connection connection = DatabaseConnection.getInstance().getConnection();
+	private final Connection connection = DatabaseConnection.getConnection();
 	
 	 /**
      * Ottiene i risultati della query di un album
      *
      * @param result risultato della query
      * @return oggetto album
-     * @throws SQLException
+     * @throws SQLException eccezoine di accesso al database
      */
     private Album getAlbumByResultSet(ResultSet result) throws SQLException {
         int id = result.getInt("id");
@@ -45,10 +46,17 @@ public class CatalogDatabase implements Catalog {
                 getSongsByAlbumId(id)
         );
     }
-    
-    private Object[][] getMusiciansAndInstrumentsByAlbumId(int id) throws SQLException {
+
+	/**
+	 * Ottiene un array bidimensionale con associazione musicista/strumento suonato
+	 * @param id id dell'album da considerare
+	 * @return elenco di musicisti con relativo strumento che suonano nel dato album
+	 * @throws SQLException eccezione sql
+	 */
+	private Object[][] getMusiciansAndInstrumentsByAlbumId(int id) throws SQLException {
     	try (PreparedStatement preparedStatement = connection.prepareStatement(
     			"SELECT * FROM musicisti_cd INNER JOIN musicisti ON musicista = musicisti.id WHERE cd = ?")) {
+    		preparedStatement.setInt(1, id);
     		ResultSet queryResult = preparedStatement.executeQuery();
     		
     		List<Musician> musicians = new ArrayList<>();
@@ -71,6 +79,12 @@ public class CatalogDatabase implements Catalog {
     	}
     }
 
+    /**
+     * Ottiene un array di canzoni partendo dall'id dell'album
+     * @param id id dell'album
+     * @return array delle canzoni in esso contenute
+     * @throws SQLException eccezione sql
+     */
     private String[] getSongsByAlbumId(int id) throws SQLException {
     	 try (PreparedStatement preparedStatement = connection.prepareStatement( "SELECT * FROM brani WHERE cd = ?")) {
     		 preparedStatement.setInt(1, id);
@@ -86,15 +100,15 @@ public class CatalogDatabase implements Catalog {
     }
     
 	
-	/* (non-Javadoc)
+	/**
 	 * @see it.alerighi.shop.Catalog#addAlbum(it.alerighi.shop.Album)
 	 */
 	@Override
 	public void addAlbum(Album album) {
-		// TODO Auto-generated method stub
+		/* NOT IMPLEMENTED */
 	}
 
-	/* (non-Javadoc)
+	/**
 	 * @see it.alerighi.shop.Catalog#getAlbums()
 	 */
 	@Override
@@ -107,20 +121,21 @@ public class CatalogDatabase implements Catalog {
             }
 
         } catch (SQLException e) {
-            die("Errore query");
+        	e.printStackTrace();
+            die("Errore query ");
         }
 
         return albums;
 	}
 
-	/* (non-Javadoc)
+	/**
 	 * @see it.alerighi.shop.Catalog#getAlbumsByTitle(java.lang.String)
 	 */
 	@Override
 	public List<Album> getAlbumsByTitle(String title) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE title = ?")) {
-        	statement.setString(1, title);
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE titolo LIKE ?")) {
+        	statement.setString(1, "%" + title + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 albums.add(getAlbumByResultSet(result));
@@ -133,14 +148,14 @@ public class CatalogDatabase implements Catalog {
         return albums;
 	}
 
-	/* (non-Javadoc)
+	/**
 	 * @see it.alerighi.shop.Catalog#getAlbumsByGenre(java.lang.String)
 	 */
 	@Override
 	public List<Album> getAlbumsByGenre(String genre) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE genere = ?")) {
-        	statement.setString(1, genre);
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE genere LIKE ?")) {
+        	statement.setString(1, "%" + genre + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 albums.add(getAlbumByResultSet(result));
@@ -153,12 +168,15 @@ public class CatalogDatabase implements Catalog {
         return albums;
 	}
 
+    /**
+     * @see it.alerighi.shop.Catalog#getAlbumsByMusician(String)
+     */
 	@Override
-	public List<Album> getAlbumsByMusician(Musician musician) {
+	public List<Album> getAlbumsByMusician(String musician) {
 		List<Album> albums = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement(
-        		"SELECT cd.* FROM cd INNER JOIN musicisti_cd ON musicisti_cd.cd = cd.id WHERE musicista = ?")) {
-        	statement.setInt(1, musician.getId());
+        		"SELECT cd.* FROM cd INNER JOIN musicisti_cd ON musicisti_cd.cd = cd.id INNER JOIN musicisti ON musicisti_cd.musicista = musicisti.id WHERE musicisti.nome LIKE ?")) {
+        	statement.setString(1, "%" + musician + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 albums.add(getAlbumByResultSet(result));
@@ -171,11 +189,14 @@ public class CatalogDatabase implements Catalog {
         return albums;
 	}
 
+    /**
+     * @see it.alerighi.shop.Catalog#getAlbumsByAuthor(String)
+     */
 	@Override
 	public List<Album> getAlbumsByAuthor(String author) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE author = ?")) {
-        	statement.setString(1, author);
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE titolare LIKE ?")) {
+        	statement.setString(1, "%" + author + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 albums.add(getAlbumByResultSet(result));
@@ -188,10 +209,13 @@ public class CatalogDatabase implements Catalog {
         return albums;
 	}
 
-	@Override
+    /**
+     * @see it.alerighi.shop.Catalog#getAlbumsByPrice(int)
+     */
+    @Override
 	public List<Album> getAlbumsByPrice(int price) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE price = ?")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE prezzo < ?")) {
         	statement.setInt(1, price);
             ResultSet result = statement.executeQuery();
             while (result.next()) {
