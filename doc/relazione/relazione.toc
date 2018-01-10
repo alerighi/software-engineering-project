@@ -1,0 +1,12 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{1}
+\contentsline {subsection}{\numberline {1.1}Specifica del progetto}{1}
+\contentsline {section}{\numberline {2}Analisi dei casi d'uso principali}{3}
+\contentsline {subsection}{\numberline {2.1}Use case diagram}{3}
+\contentsline {subsection}{\numberline {2.2}Attori}{3}
+\contentsline {subsection}{\numberline {2.3}Schede specifica casi d'uso principali}{4}
+\contentsline {section}{\numberline {3}Implementazione del prototipo}{5}
+\contentsline {subsection}{\numberline {3.1}Interfaccia grafica}{5}
+\contentsline {subsection}{\numberline {3.2}Base di dati}{5}
+\contentsline {subsection}{\numberline {3.3}Design pattern utilizzati}{5}
