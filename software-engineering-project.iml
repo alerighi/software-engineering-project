@@ -11,12 +11,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/postgresql-42.1.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql-connector-java-5.1.42-bin" level="project" />
   </component>
 </module>

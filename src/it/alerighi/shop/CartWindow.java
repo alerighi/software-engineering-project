@@ -13,9 +13,9 @@ public class CartWindow extends JFrame implements Observer {
 
     public CartWindow() {
         setTitle("Carrello");
-        setLocationRelativeTo(null);
-        buttonClose.addActionListener(e -> dispose());
-        buyButton.addActionListener(e -> new BuyWindow().setVisible(true));
+        buttonClose.addActionListener(e -> setVisible(false));
+        //buyButton.addActionListener(e -> TODO: implementare );
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
         removeItem.addActionListener(e -> remove());
         cart.registerObserver(this);
 
@@ -26,7 +26,7 @@ public class CartWindow extends JFrame implements Observer {
         setContentPane(contentPane);
 
         pack();
-        setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     @Override
@@ -51,5 +51,11 @@ public class CartWindow extends JFrame implements Observer {
             return;
         Object a = itemTable.getModel().getValueAt(row, 0);
         cart.remove((Album) a);
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        cart.deleteObserver(this);
     }
 }

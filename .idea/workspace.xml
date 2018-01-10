@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10351490-9bd1-41e0-b8ee-ef07b1b3439c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.form" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.form" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.form" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Observer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Sales.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Users.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java" />
-      <change beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Database.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/db/schema.sql" afterPath="$PROJECT_DIR$/db/schema.sql" />
       <change beforePath="$PROJECT_DIR$/software-engineering-project.iml" afterPath="$PROJECT_DIR$/software-engineering-project.iml" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Album.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Album.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailsWindow.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Cart.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Cart.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Catalog.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Catalog.java" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.form" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.form" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Main.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Musician.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Musician.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Sale.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Sale.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Store.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/User.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Util.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Util.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Warehouse.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Warehouse.java" />
-      <change beforePath="$PROJECT_DIR$/test/it/alerighi/DatabaseConnectionTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/Users.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/Users.java" />
+      <change beforePath="$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java" afterPath="$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,31 +68,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Sale.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sale.java">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
-              <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+            <state relative-caret-position="510">
+              <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java">
+      <file leaf-file-name="CreateUserDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4136">
-              <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1021#1149#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java">
+      <file leaf-file-name="CatalogDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3278">
-              <caret line="157" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+            <state relative-caret-position="158">
+              <caret line="51" column="33" lean-forward="false" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+              <folding>
+                <marker date="1515603710316" expanded="true" signature="1908:2011" ph="SELECT * FRO... musicisti_cd" />
+                <marker date="1515603710316" expanded="true" signature="3056:3088" ph="SELECT * FRO... brani" />
+                <marker date="1515603710316" expanded="true" signature="3854:3868" ph="SELECT * FRO... cd" />
+                <marker date="1515603710316" expanded="true" signature="3854:3871" ph="SELECT * FRO... CDs" />
+                <marker date="1515603710316" expanded="true" signature="4377:4413" ph="SELECT * FRO... cd" />
+                <marker date="1515603710316" expanded="true" signature="4999:5035" ph="SELECT * FRO... cd" />
+                <marker date="1515603710316" expanded="true" signature="5640:5738" ph="SELECT cd.* cd" />
+                <marker date="1515603710316" expanded="true" signature="6329:6366" ph="SELECT * FRO... CDs" />
+                <marker date="1515603710316" expanded="true" signature="6949:6982" ph="SELECT * FRO... CDs" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Album.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Album.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-320">
+              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlbumDetailDialog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,67 +145,37 @@
       <file leaf-file-name="Observer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Observer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Album.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Album.java">
+      <file leaf-file-name="Sale.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1628">
-              <caret line="75" column="37" lean-forward="false" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state relative-caret-position="-923">
+              <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlbumDetailDialog.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.form">
+      <file leaf-file-name="Sales.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sales.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateUserDialog.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlbumDetailDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="software-engineering-project.iml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/software-engineering-project.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Container.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/Container.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23100">
-              <caret line="1126" column="0" lean-forward="false" selection-start-line="1126" selection-start-column="0" selection-end-line="1126" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Cart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2046">
-              <caret line="101" column="6" lean-forward="false" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -195,7 +195,25 @@
       <find>CartWindo</find>
       <find>CartWin</find>
       <find>table</find>
+      <find>cd</find>
+      <find>titolare</find>
+      <find>genere</find>
+      <find>musicisti</find>
+      <find>titolo</find>
     </findStrings>
+    <replaceStrings>
+      <replace>product</replace>
+      <replace>cover_image</replace>
+      <replace>price</replace>
+      <replace>author</replace>
+      <replace>genre</replace>
+      <replace>songs</replace>
+      <replace>title</replace>
+      <replace>musician</replace>
+      <replace>musicians</replace>
+      <replace>CDs</replace>
+      <replace>code</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -222,15 +240,9 @@
         <option value="$PROJECT_DIR$/src/it/alerighi/AlbumDetailsDialog.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/AlbumDetailsDialog.form" />
         <option value="$PROJECT_DIR$/src/it/alerighi/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Album.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Catalog.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Musician.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Observer.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Sales.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Users.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Util.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Warehouse.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Sale.java" />
@@ -239,18 +251,27 @@
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialogOld.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/CartWindowOld.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.form" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/Cart.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.form" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/User.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailsWindow.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailWindow.java" />
-        <option value="$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Musician.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.form" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/User.java" />
+        <option value="$PROJECT_DIR$/db/schema.sql" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Database.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.kt" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Users.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java" />
+        <option value="$PROJECT_DIR$/src/it/alerighi/shop/Album.java" />
         <option value="$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java" />
       </list>
     </option>
@@ -261,11 +282,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="380" />
-    <option name="y" value="19" />
-    <option name="width" value="1940" />
-    <option name="height" value="2110" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="374" />
+    <option name="y" value="247" />
+    <option name="width" value="1440" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -341,6 +362,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,11 +381,6 @@
             <path>
               <item name="software-engineering-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="software-engineering-project" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="software-engineering-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="software-engineering-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,21 +389,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="software-engineering-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="software-engineering-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="AlbumDetailDialog" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="show byte&#9;ACTION&#9;ByteCodeViewer&#10;SHOW&#9;ACTION&#9;ByteCodeViewer&#10;show&#9;ACTION&#9;ByteCodeViewer&#10;run tests&#9;ACTION&#9;RerunTests&#10;test&#9;ACTION&#9;RerunTests&#10;databa&#9;ACTION&#9;ActivateDatabaseToolWindow" />
@@ -394,7 +417,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="582" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="282" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="left" />
   </component>
   <component name="RecentsManager">
@@ -437,53 +460,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="software-engineering-project" />
       <envs />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
@@ -668,6 +644,53 @@
       <module name="" />
       <envs />
       <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
@@ -930,6 +953,9 @@
       <workItem from="1512138025562" duration="28000" />
       <workItem from="1512138143153" duration="64000" />
       <workItem from="1513946745273" duration="91000" />
+      <workItem from="1513947458829" duration="16050000" />
+      <workItem from="1515596997776" duration="1023000" />
+      <workItem from="1515598868228" duration="1128000" />
     </task>
     <servers />
   </component>
@@ -966,25 +992,26 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46303000" />
+    <option name="totallyTimeSpent" value="64504000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="3862" height="2122" extended-state="6" />
+    <frame x="374" y="247" width="1440" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968178" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33698487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33649933" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16816977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17453505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27181688" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1000,7 +1027,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1032,53 +1059,8 @@
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/AlbumDetailsDialog.java" />
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/DatabaseConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/MainWindow.java" />
-    <entry file="file://$PROJECT_DIR$/db/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Musician.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/dark.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/event/WindowAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1851">
-          <caret line="108" column="42" lean-forward="true" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/img/dark.jpg" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/event/WindowAdapter.java" />
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/LoginDialogOld.java" />
     <entry file="uml://JAVA/it.alerighi.shop">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -1382,139 +1364,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Catalog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CartWindowOld.java" />
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Warehouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sales.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CartWindow.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CreateUserDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CatalogDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CartWindow.class" />
+    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CreateUserDialog.class" />
+    <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CatalogDatabase.class" />
     <entry file="file://$PROJECT_DIR$/out/production/software-engineering-project/it/alerighi/shop/CartWindowOld.class" />
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="46" column="61" lean-forward="false" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4136">
-          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1523,41 +1377,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Cart.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/event/ActionListener.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/Container.java" />
+    <entry file="file://$PROJECT_DIR$/software-engineering-project.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="101" column="6" lean-forward="false" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/BuyWindow.java" />
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Catalog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3278">
-          <caret line="157" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23100">
-          <caret line="1126" column="0" lean-forward="false" selection-start-line="1126" selection-start-column="0" selection-end-line="1126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Album.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1628">
-          <caret line="75" column="37" lean-forward="false" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        <state relative-caret-position="600">
+          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1567,18 +1400,200 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Musician.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="62" />
+        <state relative-caret-position="249">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/software-engineering-project.iml">
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="148">
+          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="126" column="71" lean-forward="false" selection-start-line="126" selection-start-column="71" selection-end-line="126" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="126" column="7" lean-forward="false" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/LoginDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="31" column="15" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding>
+            <element signature="e#1827#1828#0" expanded="false" />
+            <element signature="e#1854#1855#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Warehouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CartWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/UsersDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="55" column="47" lean-forward="false" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+          <folding>
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <marker date="1514032152450" expanded="true" signature="893:950" ph="SELECT * FRO... users" />
+            <marker date="1514032152450" expanded="true" signature="2170:2323" ph="INSERT INTO users... " />
+            <marker date="1514032152450" expanded="true" signature="3238:3276" ph="DELETE FROM users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="2" lean-forward="false" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CreateUserDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1021#1149#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-923">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Sales.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/CatalogDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="51" column="33" lean-forward="false" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <marker date="1515603710316" expanded="true" signature="1908:2011" ph="SELECT * FRO... musicisti_cd" />
+            <marker date="1515603710316" expanded="true" signature="3056:3088" ph="SELECT * FRO... brani" />
+            <marker date="1515603710316" expanded="true" signature="3854:3868" ph="SELECT * FRO... cd" />
+            <marker date="1515603710316" expanded="true" signature="3854:3871" ph="SELECT * FRO... CDs" />
+            <marker date="1515603710316" expanded="true" signature="4377:4413" ph="SELECT * FRO... cd" />
+            <marker date="1515603710316" expanded="true" signature="4999:5035" ph="SELECT * FRO... cd" />
+            <marker date="1515603710316" expanded="true" signature="5640:5738" ph="SELECT cd.* cd" />
+            <marker date="1515603710316" expanded="true" signature="6329:6366" ph="SELECT * FRO... CDs" />
+            <marker date="1515603710316" expanded="true" signature="6949:6982" ph="SELECT * FRO... CDs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/Album.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/alerighi/shop/AlbumDetailDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1640,7 +1655,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

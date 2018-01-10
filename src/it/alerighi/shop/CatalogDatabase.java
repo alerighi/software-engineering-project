@@ -20,8 +20,19 @@ import java.util.List;
  */
 public class CatalogDatabase implements Catalog {
 
-	
-	private final Connection connection = DatabaseConnection.getConnection();
+	/**
+	 * Connessione al DB
+	 */
+	private final Connection connection;
+
+	/**
+	 * Costruttore database utenti
+	 *
+	 * @param connection
+	 */
+	public CatalogDatabase(Connection connection) {
+		this.connection = connection;
+	}
 	
 	 /**
      * Ottiene i risultati della query di un album
@@ -31,16 +42,16 @@ public class CatalogDatabase implements Catalog {
      * @throws SQLException eccezoine di accesso al database
      */
     private Album getAlbumByResultSet(ResultSet result) throws SQLException {
-        int id = result.getInt("id");
+        int id = result.getInt("code");
         Object[][] musiciansAndInstruments = getMusiciansAndInstrumentsByAlbumId(id);
         return new Album(
                 id,
-                result.getString("titolo"),
-                result.getString("titolare"),
-                result.getString("copertina"),
-                result.getInt("prezzo"),
-                result.getDate("data"),
-                result.getString("genere"),
+                result.getString("title"),
+                result.getString("author"),
+                result.getString("cover_image"),
+                result.getDouble("price"),
+                result.getDate("date_since_on_sale"),
+                result.getString("genre"),
                 (Musician[]) musiciansAndInstruments[0],
                 (String[]) musiciansAndInstruments[1],
                 getSongsByAlbumId(id)
@@ -55,7 +66,7 @@ public class CatalogDatabase implements Catalog {
 	 */
 	private Object[][] getMusiciansAndInstrumentsByAlbumId(int id) throws SQLException {
     	try (PreparedStatement preparedStatement = connection.prepareStatement(
-    			"SELECT * FROM musicisti_cd INNER JOIN musicisti ON musicista = musicisti.id WHERE cd = ?")) {
+    			"SELECT * FROM musicians, musician_cd WHERE musicians.name = musician_cd.musician AND musician_cd.cd = ?")) {
     		preparedStatement.setInt(1, id);
     		ResultSet queryResult = preparedStatement.executeQuery();
     		
@@ -63,13 +74,12 @@ public class CatalogDatabase implements Catalog {
     		List<String> instruments = new ArrayList<>();
     		while (queryResult.next()) {
     			musicians.add(new Musician(
-    				queryResult.getInt("id"),
-    				queryResult.getString("nome"),
-    				queryResult.getString("genere"),
-    				queryResult.getInt("anno"),
-    				queryResult.getString("strumenti").split(";")
+    				queryResult.getString("name"),
+    				queryResult.getString("main_genre"),
+    				queryResult.getInt("year_of_birth"),
+    				null
     			));
-    			instruments.add(queryResult.getString("strumento"));
+    			instruments.add(queryResult.getString("instrument"));
     		}
     		
     		return new Object[][] {
@@ -86,13 +96,13 @@ public class CatalogDatabase implements Catalog {
      * @throws SQLException eccezione sql
      */
     private String[] getSongsByAlbumId(int id) throws SQLException {
-    	 try (PreparedStatement preparedStatement = connection.prepareStatement( "SELECT * FROM brani WHERE cd = ?")) {
+    	 try (PreparedStatement preparedStatement = connection.prepareStatement( "SELECT * FROM songs WHERE cd = ?")) {
     		 preparedStatement.setInt(1, id);
     		 ResultSet queryResult = preparedStatement.executeQuery();
          
     		 List<String> songs = new ArrayList<>();
     		 while (queryResult.next()) {
-    			 songs.add(queryResult.getString("titolo"));
+    			 songs.add(queryResult.getString("title"));
     		 }
     		 
     		 return songs.toArray(new String[songs.size()]);
@@ -115,7 +125,7 @@ public class CatalogDatabase implements Catalog {
 	public List<Album> getAlbums() {
 		List<Album> albums = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
-            ResultSet result = statement.executeQuery("SELECT * FROM cd");
+            ResultSet result = statement.executeQuery("SELECT * FROM CDs");
             while (result.next()) {
                 albums.add(getAlbumByResultSet(result));
             }
@@ -134,7 +144,7 @@ public class CatalogDatabase implements Catalog {
 	@Override
 	public List<Album> getAlbumsByTitle(String title) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE titolo LIKE ?")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM CDs WHERE title LIKE ?")) {
         	statement.setString(1, "%" + title + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
@@ -154,7 +164,7 @@ public class CatalogDatabase implements Catalog {
 	@Override
 	public List<Album> getAlbumsByGenre(String genre) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE genere LIKE ?")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM CDs WHERE genre LIKE ?")) {
         	statement.setString(1, "%" + genre + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
@@ -175,7 +185,7 @@ public class CatalogDatabase implements Catalog {
 	public List<Album> getAlbumsByMusician(String musician) {
 		List<Album> albums = new ArrayList<>();
         try (PreparedStatement statement = connection.prepareStatement(
-        		"SELECT cd.* FROM cd INNER JOIN musicisti_cd ON musicisti_cd.cd = cd.id INNER JOIN musicisti ON musicisti_cd.musicista = musicisti.id WHERE musicisti.nome LIKE ?")) {
+        		"SELECT CDs.* FROM CDs, musician_cd WHERE musician_cd.cd = CDs.code AND musician_cd.musician LIKE ?")) {
         	statement.setString(1, "%" + musician + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
@@ -195,7 +205,7 @@ public class CatalogDatabase implements Catalog {
 	@Override
 	public List<Album> getAlbumsByAuthor(String author) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE titolare LIKE ?")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM CDs WHERE author LIKE ?")) {
         	statement.setString(1, "%" + author + "%");
             ResultSet result = statement.executeQuery();
             while (result.next()) {
@@ -215,7 +225,7 @@ public class CatalogDatabase implements Catalog {
     @Override
 	public List<Album> getAlbumsByPrice(int price) {
 		List<Album> albums = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM cd WHERE prezzo < ?")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM CDs WHERE price < ?")) {
         	statement.setInt(1, price);
             ResultSet result = statement.executeQuery();
             while (result.next()) {

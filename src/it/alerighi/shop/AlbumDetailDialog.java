@@ -35,12 +35,11 @@ public class AlbumDetailDialog extends JDialog {
         getRootPane().setDefaultButton(buttonOK);
         setTitle("Dettagli album " + album.getTitle());
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setLocationRelativeTo(null);
 
         labelAuthor.setText("Autore: " + album.getAuthor());
         labelGenre.setText("Genere: " + album.getGenre());
         labelSaleSince.setText("In vendita da: " + album.getDateSinceOnSale());
-        labelPrice.setText("Prezzo: " + album.getPrice() + "€");
+        labelPrice.setText("Prezzo: " + String.format("%4.2f", album.getPrice()) + "€");
         songList.setListData(album.getSongs());
         buttonAddToCart.addActionListener(e -> Cart.getInstance().add(album));
 
@@ -63,6 +62,7 @@ public class AlbumDetailDialog extends JDialog {
         buttonOK.addActionListener(e -> onOK());
 
         pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -72,7 +72,7 @@ public class AlbumDetailDialog extends JDialog {
     }
 
     private void createUIComponents() {
-        imagePanel = new ImagePanel("C:\\Users\\aless\\Desktop\\software-engineering-project\\img\\" + album.getCover());
+        imagePanel = new ImagePanel("/Users/ale/git/software-engineering-project/img/" + album.getCover());
     }
 
     /**

@@ -5,7 +5,7 @@ package it.alerighi.shop;
  * 
  * @author Alessandro Righi
  */
-public class User {
+public final class User {
 
 	/**
 	 * Nome utente
@@ -35,7 +35,7 @@ public class User {
 	/**
 	 * Codice fiscale
 	 */
-	private final String fiscalCode;
+	private final String taxCode;
 
 	/**
 	 * Telefono fisso
@@ -47,6 +47,11 @@ public class User {
 	 */
 	private final String mobile;
 
+    /**
+     * Is user an admin
+     */
+	private final boolean isAdmin;
+
 	/**
 	 * Costruisce un nuovo utente
 	 * 
@@ -55,20 +60,22 @@ public class User {
 	 * @param firstName nome
 	 * @param lastName cognome
 	 * @param city città di residenza
-	 * @param fiscalCode codice fiscale
+	 * @param taxCode codice fiscale
 	 * @param phone telefono fisso
 	 * @param mobile telefono cellulare
+     * @param isAdmin indica se l'utente è amministratore
 	 */
-	public User(String username, String password, String firstName, String lastName, String city, String fiscalCode,
-			String phone, String mobile) {
+	public User(String username, String password, String firstName, String lastName, String city, String taxCode,
+			String phone, String mobile, boolean isAdmin) {
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.city = city;
-		this.fiscalCode = fiscalCode;
+		this.taxCode = taxCode;
 		this.phone = phone;
 		this.mobile = mobile;
+		this.isAdmin = isAdmin;
 	}
 
 
@@ -78,7 +85,10 @@ public class User {
 	 * @return the username
 	 */
 	public String getUsername() {
-		return username;
+		if (isAdmin)
+		    return username + "*";
+		else
+		    return username;
 	}
 
 
@@ -125,10 +135,10 @@ public class User {
 	/**
 	 * Ottiene il codice fiscale
 	 *
-	 * @return the fiscalCode
+	 * @return the taxCode
 	 */
-	public String getFiscalCode() {
-		return fiscalCode;
+	public String getTaxCode() {
+		return taxCode;
 	}
 
 
@@ -152,13 +162,22 @@ public class User {
 	}
 
 
+    /**
+     * Ottiene se l'utente è amministratore
+     *
+     * @return true se l'utente è amministratore
+     */
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", city=" + city + ", fiscalCode=" + fiscalCode + ", phone=" + phone + ", mobile=" + mobile
+				+ lastName + ", city=" + city + ", taxCode=" + taxCode + ", phone=" + phone + ", mobile=" + mobile
 				+ "]";
 	}
 

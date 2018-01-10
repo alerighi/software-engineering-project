@@ -58,7 +58,7 @@ public class Album {
     /**
      * Prezzo dell'album
      */
-    private final int price;
+    private final double price;
 
 
     /**
@@ -75,7 +75,7 @@ public class Album {
      * @param instruments strumenti partecipanti
      * @param songs canzoni contenute
      */
-    public Album(int id, String title, String author, String cover, int price, Date dateSinceOnSale, String genre,
+    public Album(int id, String title, String author, String cover, double price, Date dateSinceOnSale, String genre,
                  Musician[] musicians, String[] instruments, String[] songs) {
         this.author = author;
         this.cover = cover;
@@ -130,7 +130,7 @@ public class Album {
      * 
      * @return prezzo dell'album
      */
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

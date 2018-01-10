@@ -1,8 +1,5 @@
 package it.alerighi.shop;
 
-import it.alerighi.shop.User;
-import it.alerighi.shop.UsersDatabase;
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Arrays;
@@ -25,9 +22,7 @@ public class CreateUserDialog extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         setTitle("Registra nuovo utente");
-        setLocationRelativeTo(null);
         getRootPane().setDefaultButton(buttonOK);
-        pack();
 
         buttonOK.addActionListener(e -> onOK());
 
@@ -43,6 +38,9 @@ public class CreateUserDialog extends JDialog {
 
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     private void onOK() {
@@ -54,7 +52,7 @@ public class CreateUserDialog extends JDialog {
             JOptionPane.showMessageDialog(this, "Il nome non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
         else if (lastNameField.getText().length() <= 0)
             JOptionPane.showMessageDialog(this, "Il cognome non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
-        else if (passwordField.getPassword().length <= 8)
+        else if (passwordField.getPassword().length < 8)
             JOptionPane.showMessageDialog(this, "La password deve essere di almeno 8 caratteri", "Errore", JOptionPane.ERROR_MESSAGE);
         else if (cityField.getText().length() <= 0)
             JOptionPane.showMessageDialog(this, "Il campo città non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -62,8 +60,6 @@ public class CreateUserDialog extends JDialog {
             JOptionPane.showMessageDialog(this, "Il campo codice fiscale non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
         else if (phoneField.getText().length() <= 0)
             JOptionPane.showMessageDialog(this, "Il campo numero di telefono non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
-        else if (mobileField.getText().length() <= 0)
-            JOptionPane.showMessageDialog(this, "Il campo numero di cellulare non può essere vuoto", "Errore", JOptionPane.ERROR_MESSAGE);
         else if (!Arrays.equals(passwordField.getPassword(), passwordConfirmField.getPassword()))
             JOptionPane.showMessageDialog(this, "Le password inserite non corrispondono", "Errore", JOptionPane.ERROR_MESSAGE);
         else
@@ -74,12 +70,14 @@ public class CreateUserDialog extends JDialog {
                     cityField.getText(),
                     fiscalCodeField.getText(),
                     phoneField.getText(),
-                    mobileField.getText());
+                    mobileField.getText(),
+                    false
+            );
 
         if (user == null)
             return;
 
-        if (!new UsersDatabase().addUser(user))
+        if (!Database.getUsersDatabase().addUser(user))
             JOptionPane.showMessageDialog(this, "Nome utente già utilizzato", "Errore", JOptionPane.ERROR_MESSAGE);
         else
             dispose();

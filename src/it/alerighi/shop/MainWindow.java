@@ -38,7 +38,7 @@ public class MainWindow extends JFrame implements Observer {
     /**
      * Oggetto catalogo
      */
-    private Catalog catalog = new CatalogDatabase();
+    private Catalog catalog = Database.getCatalogDatabase();
 
     /**
      * lista degli album
@@ -49,6 +49,8 @@ public class MainWindow extends JFrame implements Observer {
      * Bottone carrello
      */
     private JButton cartButton = new JButton();
+
+    private CartWindow cartWindow = new CartWindow();
 
 
     /**
@@ -122,7 +124,7 @@ public class MainWindow extends JFrame implements Observer {
         button_1.addActionListener(e -> getAlbums((String) comboBox.getSelectedItem(), tf.getText()));
         toolBar.add(button_1);
 
-        cartButton.addActionListener(e -> new CartWindow());
+        cartButton.addActionListener(e -> cartWindow.setVisible(true));
         toolBar.add(cartButton);
         JButton buttonLogin = new JButton(user == null ? "Login" : "Logout");
         buttonLogin.addActionListener(e -> {
@@ -130,7 +132,7 @@ public class MainWindow extends JFrame implements Observer {
         		user = null;
         	else 
         		user = new LoginDialog().showDialog();
-        	buttonLogin.setText(user == null ? "Login" : "Logout");
+        	buttonLogin.setText(user == null ? "Login" : "Logout (" + user.getUsername() + ")");
         });
         toolBar.add(buttonLogin);
         

@@ -28,25 +28,18 @@ public class Musician {
 	private final String[] instruments;
 
     /**
-     * Id del musicista
-     */
-	private final int id;
-
-    /**
      * Costruisce un musicista
      *
-     * @param id id
      * @param name nome
      * @param genre genere suonato
      * @param year anno di nascita
      * @param instruments strumenti suonati
      */
-	public Musician(int id, String name, String genre, int year, String[] instruments) {
+	public Musician(String name, String genre, int year, String[] instruments) {
 		this.name = name;
 		this.genre = genre;
 		this.year = year;
 		this.instruments = instruments;
-		this.id = id;
 	}
 
     /**
@@ -85,15 +78,6 @@ public class Musician {
 		return instruments;
 	}
 
-    /**
-     * ottiene l'id del musicista
-     *
-     * @return id del musicista
-     */
-	public int getId() {
-		return id;
-	}
-	
 	@Override
 	public String toString() {
 		return this.name;

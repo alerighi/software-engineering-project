@@ -20,7 +20,7 @@ public interface Users {
 	 * Autentica un utente
 	 * @param username
 	 * @param password
-	 * @return
+	 * @return l'utente autenticato in caso di successo, null in caso di errore
 	 */
 	User authenticateUser(String username, String password);
 }

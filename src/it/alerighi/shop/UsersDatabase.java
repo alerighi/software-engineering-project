@@ -7,18 +7,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 /**
  * Classe che rappresenta il database degli utenti
  * 
  * @author Alessandro Righi
  */
-public class UsersDatabase implements Users {
+public final class UsersDatabase implements Users {
 
     /**
      * connessione al database
      */
-	private Connection connection = DatabaseConnection.getConnection();
+	private final Connection connection;
+
+    /**
+     * Costruttore database utenti
+     *
+     * @param connection
+     */
+	public UsersDatabase(Connection connection) {
+	    this.connection = connection;
+    }
 	
 	/**
      * Funzione che autentica un utente
@@ -28,7 +36,7 @@ public class UsersDatabase implements Users {
      * @return ritorna true nel caso l'utente sia autenticato, false altrimenti
      */
     public User authenticateUser(String username, String password) {
-        String query = "SELECT * FROM utenti WHERE username = ? AND password = ?";
+        String query = "SELECT * FROM clients WHERE username = ? AND password = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
@@ -36,31 +44,22 @@ public class UsersDatabase implements Users {
             ResultSet result = statement.executeQuery();
             if (!result.next())
                 return null;
-            return createUserFromResultSet(result);
+            return new User(
+                    result.getString("username"),
+                    result.getString("password"),
+                    result.getString("first_name"),
+                    result.getString("last_name"),
+                    result.getString("city"),
+                    result.getString("tax_code"),
+                    result.getString("phone"),
+                    result.getString("mobile_phone"),
+                    result.getBoolean("is_admin")
+            );
         } catch (SQLException e) {
-            die("Errore query ");
+            die("Errore query: " + e.getLocalizedMessage());
         }
 
         return null;
-    }
-
-    /**
-     * Costruisce un nuovo utente da un set risultato
-     * @param result result set da cui estrapolare l'utente
-     * @return ritorna l'utente selezionato
-     * @throws SQLException errore SQL
-     */
-    private User createUserFromResultSet(ResultSet result) throws SQLException {
-    	return new User(
-    		result.getString("username"),
-    		result.getString("password"),
-    		result.getString("nome"),
-    		result.getString("cognome"),
-    		result.getString("residenza"),
-    		result.getString("codice_fiscale"),
-    		result.getString("telefono"),
-    		result.getString("cellulare")
-    	);
     }
 
     /**
@@ -70,34 +69,24 @@ public class UsersDatabase implements Users {
      * @return true se l'aggiunta dell'utente è andata a buon fine, false se l'utente è già stato utilizzato
      */
     public boolean addUser(User user) {
-        String query = "SELECT * FROM utenti WHERE username = ?";
-        String query2 = "INSERT INTO utenti (codice_fiscale, username, password, nome, cognome, residenza, telefono, cellulare) " +
+        String query2 =
+                "INSERT INTO clients (tax_code, username, password, first_name, last_name, city, phone, mobile_phone) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try {
-        	try (PreparedStatement statement = connection.prepareStatement(query)) {
-        		statement.setString(1, user.getUsername());
-        		ResultSet result = statement.executeQuery();
-        		if (result.next()) // esiste già un utente con il nome selezionato
-        			return false;
-        	}
-        	try (PreparedStatement statement = connection.prepareStatement(query2)) {
-        		statement.setString(1, user.getFiscalCode());
-        		statement.setString(2, user.getUsername());
-        		statement.setString(3, user.getPassword());
-        		statement.setString(4, user.getFirstName());
-        		statement.setString(5, user.getLastName());
-        		statement.setString(6, user.getCity());
-        		statement.setString(7, user.getPhone());
-        		statement.setString(8, user.getMobile());
-        		statement.executeUpdate();
-        		return true;
-        	} 
+        try (PreparedStatement statement = connection.prepareStatement(query2)) {
+            statement.setString(1, user.getTaxCode());
+            statement.setString(2, user.getUsername());
+            statement.setString(3, user.getPassword());
+            statement.setString(4, user.getFirstName());
+            statement.setString(5, user.getLastName());
+            statement.setString(6, user.getCity());
+            statement.setString(7, user.getPhone());
+            statement.setString(8, user.getMobile());
+            statement.executeUpdate();
+            return true;
         } catch (SQLException e) {
-            die("Errore query");
+            return false;
         }
-
-        return false;
     }
 
     /**
@@ -107,10 +96,9 @@ public class UsersDatabase implements Users {
      * @return true se l'utente è stato eliminato, false se l'utente non esisteva
      */
     public boolean deleteUser(User user) {
-        String query = "DELETE FROM utenti WHERE username = ?";
+        String query = "DELETE FROM clients WHERE username = ?";
 
-        try {
-            PreparedStatement statement = connection.prepareStatement(query);
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, user.getUsername());
             return statement.executeUpdate() == 1;
         } catch (SQLException e) {
@@ -118,6 +106,4 @@ public class UsersDatabase implements Users {
         }
         return false;
     }
-
-	
 }
