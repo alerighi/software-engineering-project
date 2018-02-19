@@ -22,7 +22,7 @@ public final class UsersDatabase implements Users {
     /**
      * Costruttore database utenti
      *
-     * @param connection
+     * @param connection connessione dal database
      */
 	public UsersDatabase(Connection connection) {
 	    this.connection = connection;

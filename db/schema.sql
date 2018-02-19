@@ -6,11 +6,11 @@ CREATE SCHEMA public;
 
 -- creazione database 
 CREATE TABLE clients (
-    tax_code      VARCHAR(50)   NOT NULL PRIMARY KEY,
-    username      VARCHAR(50)   NOT NULL,
+    username      VARCHAR(50)   NOT NULL PRIMARY KEY,
     password      VARCHAR(50)   NOT NULL,
     first_name    VARCHAR(50)   NOT NULL,
     last_name     VARCHAR(50)   NOT NULL,
+    tax_code      VARCHAR(50)   NOT NULL,
     city          VARCHAR(50)   NOT NULL,
     phone         VARCHAR(50)   NOT NULL,
     mobile_phone  VARCHAR(50),

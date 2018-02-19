@@ -73,15 +73,6 @@ public final class Database {
     }
 
     /**
-     * Ritorna un instanza di oggetto connessione al database
-     *
-     * @return instanza di oggetto connessione al database
-     */
-    public static Connection getConnection() {
-    	return connection;
-    }
-
-    /**
      * Ottiene il database degli utenti
      *
      * @return database degli utenti

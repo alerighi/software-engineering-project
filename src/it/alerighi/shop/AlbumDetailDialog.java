@@ -10,6 +10,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Classe che mostra una finestra di dettagli di un album
+ */
 public class AlbumDetailDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -59,16 +62,11 @@ public class AlbumDetailDialog extends JDialog {
         musiciansTable.setFillsViewportHeight(true);
 
 
-        buttonOK.addActionListener(e -> onOK());
+        buttonOK.addActionListener(e -> dispose());
 
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    private void onOK() {
-        // add your code here
-        dispose();
     }
 
     private void createUIComponents() {
