@@ -1,16 +1,12 @@
 -- schema del database NegozioCD
 
--- pulisco il database per ricrearlo da capo
-DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;
-
 -- creazione database 
 CREATE TABLE clients (
-    username      VARCHAR(50)   NOT NULL PRIMARY KEY,
+    username      VARCHAR(50)   PRIMARY KEY,
     password      VARCHAR(50)   NOT NULL,
     first_name    VARCHAR(50)   NOT NULL,
     last_name     VARCHAR(50)   NOT NULL,
-    tax_code      VARCHAR(50)   NOT NULL,
+    tax_code      VARCHAR(50)   NOT NULL UNIQUE,
     city          VARCHAR(50)   NOT NULL,
     phone         VARCHAR(50)   NOT NULL,
     mobile_phone  VARCHAR(50),
@@ -18,7 +14,7 @@ CREATE TABLE clients (
 );
 
 CREATE TABLE CDs (
-    code                  INTEGER       NOT NULL PRIMARY KEY,
+    code                  INTEGER       PRIMARY KEY,
     title                 VARCHAR(50)   NOT NULL,
     cover_image           VARCHAR(50)   NOT NULL,
     price                 DECIMAL(5,2)  NOT NULL,
@@ -45,7 +41,7 @@ CREATE TABLE sales (
 );
 
 CREATE TABLE sales_product (
-    sale          INTEGER     REFERENCES sales,
+    sale          INTEGER     NOT NULL REFERENCES sales,
     product       INTEGER     NOT NULL REFERENCES CDs,
     amount        INTEGER     NOT NULL,
     PRIMARY KEY (sale, product)
@@ -126,5 +122,5 @@ INSERT INTO musician_cd
 
 INSERT INTO clients
     (tax_code,          username,   password,   first_name,   last_name, city,                          phone,       mobile_phone, is_admin) VALUES
-    ('XXXXXXXXXXXXXXX', 'admin',    'admin',    'Admin',      'Admin',   '-',                           '-',         '-',          TRUE    ),
-    ('XXXXXXXXXXXXXXA', 'alerighi', 'alerighi', 'Alessandro', 'Righi',   'San Pietro in Cariano (VR)', '0456801847', '2498437935', FALSE   );
+    ('XXXXXXXXXXXXXXX', 'admin',    'admin',    'Admin',      'Admin',   '-',                           '-',         NULL,         TRUE    ),
+    ('XXXXXXXXXXXXXXA', 'alerighi', 'alerighi', 'Alessandro', 'Righi',   'San Pietro in Cariano (VR)', '0456801847', '3498437935', FALSE   );
